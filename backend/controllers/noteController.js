@@ -18,7 +18,7 @@ const getNotes = asyncHandler(async (req, res) => {
   }
 
   const ticket = await Ticket.findById(req.params.ticketId);
-  console.log("this is ticket", ticket);
+  
 
   if (ticket.user.toString() !== req.user.id) {
     res.status(401);

@@ -90,7 +90,6 @@ const deleteTicket = asyncHandler(async (req, res) => {
   }
 
   const ticket = await Ticket.findById(req.params.id);
-  console.log(typeof ticket);
 
   if (!ticket) {
     res.status(404);
