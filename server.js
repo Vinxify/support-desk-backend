@@ -1,8 +1,8 @@
 const colors = require("colors");
 const express = require("express");
 const dotenv = require("dotenv").config();
-const { errorHandler } = require("./middleware/errorMiddleware");
-const connectDB = require("./config/db");
+const { errorHandler } = require("./backend/middleware/errorMiddleware");
+const connectDB = require("./backend/config/db");
 const cors = require("cors");
 
 const PORT = process.env.PORT;
@@ -24,8 +24,8 @@ app.get("/", (req, res) => {
 });
 
 //Routes
-app.use("/api/users", require("./routes/userRoutes"));
-app.use("/api/tickets", require("./routes/ticketRoutes"));
+app.use("/api/users", require("./backend/routes/userRoutes"));
+app.use("/api/tickets", require("./backend/routes/ticketRoutes"));
 
 app.use(errorHandler);
 
